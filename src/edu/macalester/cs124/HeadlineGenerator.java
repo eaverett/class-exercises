@@ -10,5 +10,7 @@ public class HeadlineGenerator extends ConsoleProgram {
     
     public void run() {
         setFont(new Font("Helvetica Neue", Font.BOLD, 24));
+        
+        println("Breaking news!!");
     }
 }
