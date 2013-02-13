@@ -17,7 +17,7 @@ public class HeadlineGenerator extends ConsoleProgram {
     }
     
     public String headline() {
-        switch(rand.nextInt(10)) {
+        switch(rand.nextInt(11)) {
             case  1: return person() + " TO WED " + person();
             case  2: return person() + " ANNOUNCES " + issue() + " PLAN";
             case  3: return person() + " ESCAPES FROM " + place();
@@ -27,6 +27,7 @@ public class HeadlineGenerator extends ConsoleProgram {
             case  7: return issue() + " CLAIMS " + person();
             case  8: return person() + " SUES " + person() + " OVER " + issue();
             case  9: return headline() + " AS " + headline();
+            case 10: return headline() + " DESPITE " + issue();
             default: return place() + " SUCCUMBS TO " + issue();
         }
     }
