@@ -7,10 +7,24 @@ import java.awt.*;
 public class DrawCircle extends GraphicsProgram{
 	public void run(){
 		double oneX = getWidth();
-		//double oneY = getHeight();
-		double pOverq = (p/q)*(oneX);
-		double circWidth = oneX*(1/(q*q));
-		add(drawFordCircle(pOverq - (circWidth/2), 0, circWidth, circWidth));
+		double p = 1;
+		double q = 1;
+		double pOverq;
+		double circWidth;
+		while (p<50){
+			pOverq = (p/q)*(oneX);
+			circWidth = oneX*(1/(q*q));
+			add(drawFordCircle(pOverq - (circWidth/2), 0, circWidth, circWidth));
+			while (q<50){
+			  	q++;
+				pOverq = (p/q)*(oneX);
+				circWidth = oneX*(1/(q*q));
+				add(drawFordCircle(pOverq - (circWidth/2), 0, circWidth, circWidth));
+				}
+			p++;
+			q=1;
+		}
+		
 	}
 	
 	private GOval drawFordCircle(double xLoc, double yLoc, double w, double h) {
@@ -20,6 +34,5 @@ public class DrawCircle extends GraphicsProgram{
 		return circle;
 	}
 	
-	private static final double p = 1;
-	private static final double q = 3;
+
 }
